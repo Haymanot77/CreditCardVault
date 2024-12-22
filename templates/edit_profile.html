@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <a href= "{{url_for('payment')}}">Back</a>
+    
+    <h2>Edit Profile</h2>
+    <div class="form-container">
+    <form method="POST">
+        <label>Name:</label>
+        <input type="text" name="name" value="{{ customer.name }}" required><br>
+        
+        <label>Email:</label>
+        <input type="email" name="email" value="{{ customer.email }}" required><br>
+        
+        <label>New Password (optional):</label>
+        <input type="password" name="password"><br>
+        
+        <button type="submit">Save Changes</button>
+    </form>
+</div>
+</body>
+</html>

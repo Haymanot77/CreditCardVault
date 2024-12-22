@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.form-container, .dashboard-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+a {
+    text-decoration: none;
+    color: #4CAF50;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    color: red;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+.logout{
+   text-align: right;
+   margin-top: 2em;
+   margin-right: 2em;
+   font-weight: bolder;
+   font-size: 1.25em;
+}
+.customer-info{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+table{
+    border-collapse: collapse;
+}
+tr {
+    border-bottom: 1px solid #ddd;
+  }
+  th,td{
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+h1{
+    text-align: center;
+    
+  }

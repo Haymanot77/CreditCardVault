@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+        // JavaScript to show/hide fields based on the selected role
+        function toggleCustomerFields() {
+            const role = document.getElementById("role").value;
+            const customerFields = document.getElementById("customer-fields");
+            
+            // Show customer-specific fields only if the role is 'customer'
+            if (role === "customer") {
+                customerFields.style.display = "block";
+                // Make the fields required
+                document.getElementById("card_number").required = true;
+                document.getElementById("cvv").required = true;
+                document.getElementById("expiration_date").required = true;
+            } else {
+                customerFields.style.display = "none";
+                // Remove the 'required' attribute for other roles
+                document.getElementById("card_number").required = false;
+                document.getElementById("cvv").required = false;
+                document.getElementById("expiration_date").required = false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Register</h2>
+        <form method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required><br><br>
+        
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required><br><br>
+        
+           
+        
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required><br><br>
+        
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="role">Role:</label>
+            <select id="role" name="role" onchange="toggleCustomerFields()" required>
+    
+                <option value="admin">Admin</option>
+                <option value="customer">Customer</option>
+                <option value="finance">Finance</option>
+                <option value="customer_service">Customer Service</option>
+               
+            </select><br><br>
+            <!-- Customer-specific fields -->
+            <div id="customer-fields" style="display: none;">
+                <label for="card_number">Card Number:</label>
+                <input type="text" id="card_number" name="card_number"><br><br>
+            
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv"><br><br>
+            
+                <label for="expiration_date">Expiration Date (YYYY-MM-DD):</label>
+                <input type="date" id="expiration_date" name="expiration_date"><br><br>
+            </div>
+        
+            <button type="submit">Register</button>
+        </form>
+        
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+    </div>
+</body>
+</html>
